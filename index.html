@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoText - Modern Text Repeater</title>
+    <!-- Basic SEO tags -->
+    <meta name="description" content="EchoText is a modern, fast, and secure text repeater tool. Repeat strings of text thousands of times instantly.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for modern SVG icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <i class="ph ph-waves"></i>
+                <h1>EchoText</h1>
+            </div>
+            <p>Repeat your text effortlessly with modern styling.</p>
+        </header>
+
+        <section class="glass-panel">
+            <div class="input-group">
+                <label for="inputText">Text to Repeat</label>
+                <textarea id="inputText" placeholder="Type or paste your text here..." rows="3"></textarea>
+            </div>
+
+            <div class="controls">
+                <div class="input-group number-input">
+                    <label for="repeatCount">Repetitions</label>
+                    <div class="number-wrapper">
+                        <button id="decBtn" class="icon-btn"><i class="ph ph-minus"></i></button>
+                        <input type="number" id="repeatCount" value="10" min="1" max="100000">
+                        <button id="incBtn" class="icon-btn"><i class="ph ph-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="addNewline" checked>
+                        <span class="checkmark"></span>
+                        Add New Line
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="addSpace">
+                        <span class="checkmark"></span>
+                        Add Space
+                    </label>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="generateBtn" class="primary-btn">
+                    <i class="ph ph-magic-wand"></i> Generate Text
+                </button>
+                <button id="clearBtn" class="secondary-btn">
+                    <i class="ph ph-trash"></i> Clear
+                </button>
+            </div>
+
+            <div class="output-group">
+                <label for="outputText">Output <span id="wordCount">(0 words)</span></label>
+                <textarea id="outputText" readonly placeholder="Your repeated text will appear here..." rows="5"></textarea>
+                <button id="copyBtn" class="copy-btn">
+                    <i class="ph ph-copy"></i> Copy Output
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden">
+        <i class="ph ph-check-circle"></i>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
